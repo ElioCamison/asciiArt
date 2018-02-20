@@ -2,14 +2,22 @@ package com.elioCamison.printer;
 
 public class Printer {
 
-        private StringBuilder alfabet = new StringBuilder();
+        private String alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?";
 
         // Constructor: accepta un String amb la representació de tot l'alfabet
         // Hi haurà 27 lletres en total, separades per un espai en blanc.
         public Printer(String alphabet) {
 
-        }
+                for (int i = 0; i < alphabet.length(); i++) {
 
+                }
+
+                this.alfabet = alphabet;
+
+
+
+
+        }
 
 
         // Mètode render: accepta un String amb el text a representar i torna
@@ -18,6 +26,7 @@ public class Printer {
         // minúscules es passen a majúscules, i els altres caràctes es tradueixen
         // a «?» (manco l'espai en blanc).
         public String render(String text) {
+
             return "";
         }
 
