@@ -2,6 +2,8 @@ package com.elioCamison.printer;
 
 public class Printer {
 
+        private StringBuilder alfabet = new StringBuilder();
+
         // Constructor: accepta un String amb la representació de tot l'alfabet
         // Hi haurà 27 lletres en total, separades per un espai en blanc.
         public Printer(String alphabet) {
