@@ -15,44 +15,49 @@ public class Main {
 
         Printer p = new Printer(data);
 
-
-        int espais = 0,posicio = 0;
-
-        int count = 0;
-        int caracteres = 0;
+        int height = 0;
+        int width = 0;
+        //--o Detectam quants caracter té una línea i quantes línea hi ha. D'aquesta forma podem donar una tamany coherent a l'array
         for (int i = 0; i < data.length(); i++) {
             if(data.charAt(i) == '\n')
-            count ++;
-            if (data.charAt(i) != '\n' && count==1){
-                caracteres++;
+                height ++;
+            if (data.charAt(i) != '\n' && height==1){
+                width++;
             }
         }
-        count+=1;
-        caracteres /= 27;
-        char lletra [][] = new char [3][5];
+        //--o Altura
+        height+=1;
+        //--o Anchura
+        width /= 27;
+        char lletra [][] = new char [height][width];
 
-        System.out.println(count);
-        System.out.println(caracteres);
+        //--o Gañanada *1000
+        lletra[0][0] = ' ';
+        lletra[0][1] = '#';
+        lletra[0][2] = ' ';
 
-        /*for (int i = 0; i < data.length(); i++) {
-            if(32 == data.charAt(i)){
-                espais++;
-                lletra[i][i] = ' ';
-            } else {
-                lletra[i][i] = data.charAt(i);
+        lletra[1][0] = '#';
+        lletra[1][1] = ' ';
+        lletra[1][2] = '#';
+
+        lletra[2][0] = '#';
+        lletra[2][1] = '#';
+        lletra[2][2] = '#';
+
+        lletra[3][0] = '#';
+        lletra[3][1] = ' ';
+        lletra[3][2] = '#';
+
+        lletra[4][0] = '#';
+        lletra[4][1] = ' ';
+        lletra[4][2] = '#';
+
+        for (int i = 0; i < lletra.length; i++) {
+            System.out.printf("\n");
+            for (int j = 0; j < lletra[i].length; j++) {
+                System.out.printf("%s",lletra[i][j]);
             }
-            System.out.println(Arrays.deepToString(lletra));
-
-        }*/
-
-
-        /*for (int i = 0; i < lletra.length; i++) {
-            lletra[i][i] = 'A';
-            System.out.println(Arrays.deepToString(lletra));
-
         }
 
-        System.out.println(Arrays.toString(lletra));
-        System.out.println(p.render("A"));*/
     }
 }

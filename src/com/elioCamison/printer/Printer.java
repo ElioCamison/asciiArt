@@ -8,15 +8,27 @@ public class Printer {
         // Hi haurà 27 lletres en total, separades per un espai en blanc.
         public Printer(String alphabet) {
 
-                for (int i = 0; i < alphabet.length(); i++) {
-
-                }
-
                 this.alfabet = alphabet;
+        }
 
 
+        private char[][] letter(String data){
+            int height = 0;
+            int width = 0;
+            for (int i = 0; i < data.length(); i++) {
+                if(data.charAt(i) == '\n')
+                    height ++;
+                if (data.charAt(i) != '\n' && height==1){
+                    width++;
+                }
+            }
+            //--o Altura
+            height+=1;
+            //--o Anchura
+            width /= 27;
 
-
+            char lletra [][] = new char [height][width];
+            return lletra;
         }
 
 
