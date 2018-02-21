@@ -14,77 +14,60 @@ public class Main {
                         "# # ##   ## ##  ### #    ## # # ###  #  # # ### # # # #  #  #     # # # ##   #  ###  #  # # # #  #  ###  # ";
 
         Printer p = new Printer(data);
-        //--o -----------------------------------------------------------------------------------------------------
-        String alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?";
-        int height = 0;
-        int width = 0;
+
+        System.out.println(p.render("###"));
+        //System.out.println(p.getAscii());
+
+        /*int height = 0; // height
+        int width = 0; // width
+
+
+
         //--o Detectam quants caracter té una línea i quantes línea hi ha. D'aquesta forma podem donar una tamany coherent a l'array
+        char[] ar = new char[data.length()];
         for (int i = 0; i < data.length(); i++) {
-            if(data.charAt(i) == '\n')
+            if(data.charAt(i) == '\n'){
                 height ++;
-            if (data.charAt(i) != '\n' && height==1){
-                width++;
             }
+            ar[i] = data.charAt(i);
         }
-        //--o -----------------------------------------------------------------------------------------------------
+        int espaciado = 0;
+        width = data.indexOf("\n") + 1;
+        espaciado = 1; //formula espaciado
+        int anchoLetra = (width / 27 ) - espaciado;
 
-        /*//--o Altura
-        height+=1;
-        //--o Anchura
-        width /= 27;*/
+        System.out.println(width);
+        System.out.println(anchoLetra);
+        System.out.println(espaciado);
+        //int espaciado = width + 1; //formula espaciado
 
-        int amp = width / 27;
+        //System.out.println(width);
+
+        StringBuilder strB = new StringBuilder();
+        for (int i = 0; i < ar.length; i++) {
+            strB.append(ar[i]);
+        }*/
+
+        /*for (int i = 0; i < alfabet.length; i++) {
+            System.out.printf("\n");
+            for (int j = 0; j < alfabet[i].length; j++) {
+                System.out.printf("%s",alfabet[i][j]);
+            }
+        }*/
+
+
+        /*int amp = width / 27;
         int alt = height+=1;
-        char lletra [][] = new char [alt][amp];
-
-        //--o -----------------------------------------------------------------------------------------------------
-
-        int resta = 2;
-        int posicio =0;
-        //--o Recorrem l'alfabet per saber quants de caràcters s'han de restar a la variable data. D'aquesta forma sabrem quina lletra hem de pintar
-        for (int i = 0; i < alfabet.length(); i++) {
-            if(alfabet.charAt(i) == 'B' && alfabet.charAt(i) != 'A'){
-                posicio = i+1;
-                resta *= posicio;
-            }
-            System.out.print(alfabet.charAt(i));
-        }
+        char lletra [][] = new char [alt][amp];*/
 
 
 
-        System.out.println();
-        System.out.println(posicio);
 
-        System.out.println();
-        System.out.println(resta);
 
-        System.out.println();
-        System.out.println(width - resta);
 
-        /*
-        //--o Gañanada *1000
-        lletra[0][0] = ' ';
-        lletra[0][1] = '#';
-        lletra[0][2] = ' ';
-
-        lletra[1][0] = '#';
-        lletra[1][1] = ' ';
-        lletra[1][2] = '#';
-
-        lletra[2][0] = '#';
-        lletra[2][1] = '#';
-        lletra[2][2] = '#';
-
-        lletra[3][0] = '#';
-        lletra[3][1] = ' ';
-        lletra[3][2] = '#';
-
-        lletra[4][0] = '#';
-        lletra[4][1] = ' ';
-        lletra[4][2] = '#';
 
         //--o Pintar la lletra :D
-        for (int i = 0; i < lletra.length; i++) {
+        /*for (int i = 0; i < lletra.length; i++) {
             System.out.printf("\n");
             for (int j = 0; j < lletra[i].length; j++) {
                 System.out.printf("%s",lletra[i][j]);
