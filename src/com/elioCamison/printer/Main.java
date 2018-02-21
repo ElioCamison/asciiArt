@@ -15,7 +15,7 @@ public class Main {
 
         Printer p = new Printer(data);
 
-        System.out.println(p.render("###"));
+        System.out.println(p.render("Z"));
         //System.out.println(p.getAscii());
 
         /*int height = 0; // height

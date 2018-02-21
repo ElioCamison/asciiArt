@@ -17,7 +17,7 @@ public class PrinterTest {
         String result;
         Printer p = new Printer(data);
 
-        result =
+       /* result =
                         " # \n" +
                         "# #\n" +
                         "###\n" +
@@ -25,28 +25,28 @@ public class PrinterTest {
                         "# #";
         assertEquals(result, p.render("A"));
 
-        /*result =
-                "## \n" +
+        result =
+                        "## \n" +
                         "# #\n" +
                         "## \n" +
                         "# #\n" +
                         "## ";
         assertEquals(result, p.render("B"));
         result =
-                "# #\n" +
+                        "# #\n" +
                         "# #\n" +
                         " # \n" +
                         "# #\n" +
                         "# #";
-        assertEquals(result, p.render("X"));
+        assertEquals(result, p.render("X"));*/
 
         result =
-                "###\n" +
+                        "###\n" +
                         "  #\n" +
                         " # \n" +
                         "   \n" +
                         " # ";
-        assertEquals(result, p.render("À"));*/
+        assertEquals(result, p.render("À"));
     }
 
     /*@Test
