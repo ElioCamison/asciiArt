@@ -17,7 +17,7 @@ public class PrinterTest {
         String result;
         Printer p = new Printer(data);
 
-       /* result =
+        result =
                         " # \n" +
                         "# #\n" +
                         "###\n" +
@@ -38,7 +38,7 @@ public class PrinterTest {
                         " # \n" +
                         "# #\n" +
                         "# #";
-        assertEquals(result, p.render("X"));*/
+        assertEquals(result, p.render("X"));
 
         result =
                         "###\n" +
@@ -49,7 +49,7 @@ public class PrinterTest {
         assertEquals(result, p.render("À"));
     }
 
-    /*@Test
+    @Test
     public void tests_texts() {
         String data =
                         " #  ##   ## ##  ### ###  ## # # ###  ## # # #   # # ###  #  ##   #  ##   ## ### # # # # # # # # # # ### ###\n" +
@@ -69,7 +69,7 @@ public class PrinterTest {
                         "### ###  ## ### ###";
         assertEquals(result, p.render("Liceu"));
 
-        result =
+        /*result =
                         "# #  #  ### # #  #  ### ###  #  ###\n" +
                         "### # # # # # # # #  #   #  # # # #\n" +
                         "### ### # # ### ###  #   #  ### # #\n" +
@@ -83,8 +83,8 @@ public class PrinterTest {
                         "#   ### ###  #   # \n" +
                         "#   # # # #  #     \n" +
                         " ## # # # # ###  # ";
-        assertEquals(result, p.render("CAMIÓ"));
-    }*/
+        assertEquals(result, p.render("CAMIÓ"));*/
+    }
 
     /*@Test
     public void tests_texts_amb_espais() {

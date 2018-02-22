@@ -15,8 +15,15 @@ public class Main {
 
         Printer p = new Printer(data);
 
-        System.out.println(p.render("Z"));
-        //System.out.println(p.getAscii());
+        System.out.println(p.render("À"));
+
+        int currentCharacter = 0;
+        String a = "A";
+        if (a.codePointAt(0) > 65 || a.codePointAt(0) < 90 ) {
+            // Introducimos en el caracter actual el valor del caracter que itera K, multiplicandolo por el ancho de la letra más el espacio entre estas.
+            currentCharacter = (a.charAt(0) - 65) * 4; // A -> 0, ? -> 27 ???
+        }
+        //System.out.println(currentCharacter);
 
         /*int height = 0; // height
         int width = 0; // width
