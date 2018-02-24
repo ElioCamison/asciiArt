@@ -6,7 +6,7 @@ public class Printer {
         private int height = 0; // altura d'algo
         private int width = 0; // tamany de algo
         private int spacing = 0; // espai entre lletres
-        private int letterWidth = 0; // com de gran es sa leltra perque soc un burro
+        private int letterWidth = 0; //
 
         // Constructor: accepta un String amb la representació de tot l'alfabet
         // Hi haurà 27 lletres en total, separades per un espai en blanc.
@@ -38,7 +38,31 @@ public class Printer {
             text = text.toUpperCase();
             int currentCharacter = 0;
 
-            // Recorremos el texto que nos llega por parámetro
+            for (int i = 0; i < this.height; i++) {
+                for (int j = 0; j < text.length(); j++) {
+                    if (text.codePointAt(j) >= 65 && text.codePointAt(j) <= 90 ) {
+                        currentCharacter = (text.charAt(j) - 65) * (this.letterWidth + this.spacing); // A -> 0, ? -> 27 ???
+                    } else {
+                        currentCharacter = this.width - letterWidth - spacing;
+                    }
+                    for (int k = 0; k < this.letterWidth; k++) {
+                        if (text.codePointAt(j) == 32){
+                            result += " ";
+                        } else {
+                            result += this.ascii[(currentCharacter + k)  + (this.width * i) ];
+                        }
+                    }
+                    if( j < text.length()-1 ){
+                        result += " ";
+                    }
+                }
+                if( i < this.height-1 ){
+                    result += "\n";
+                }
+            }
+
+
+           /* // Recorremos el texto que nos llega por parámetro
             for (int k = 0; k < text.length(); k++) {
                 // Introducimos un espacio en la variable resultado, para que genere un espacio entre las letras.
                 //result += "\n";
@@ -50,6 +74,7 @@ public class Printer {
                     // En caso de no estar dentro del rango, multiplicamos 26 por el ancho de las letras más el espacio, restandole 1, para que no se salga del array.
                     currentCharacter = this.width - letterWidth - spacing;
                 }
+                int count = 0;
                 // Iteramos el alto del abecedario
                 for (int i = 0; i < this.height; i++) {
                     // Iteramos el ancho de la letra más el espacio
@@ -57,13 +82,13 @@ public class Printer {
                         // Introduce el valor del caracter actual dentro del array, que a su vez concatena el string resultado.
                         // Concatenamos en el resultado el caracter actual sumando la iteración de j, más el ancho multiplicado por la iteración del alto.
                         result += this.ascii[(currentCharacter + j)  + (this.width * i) ];
+                        count++;
                     }
-                    if (i < this.height-1){
+                    if (i < this.height-1) {
                         result += "\n";
                     }
                 }
-            }
+            }*/
             return result;
         }
-
 }

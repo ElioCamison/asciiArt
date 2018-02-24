@@ -69,7 +69,7 @@ public class PrinterTest {
                         "### ###  ## ### ###";
         assertEquals(result, p.render("Liceu"));
 
-        /*result =
+        result =
                         "# #  #  ### # #  #  ### ###  #  ###\n" +
                         "### # # # # # # # #  #   #  # # # #\n" +
                         "### ### # # ### ###  #   #  ### # #\n" +
@@ -83,10 +83,10 @@ public class PrinterTest {
                         "#   ### ###  #   # \n" +
                         "#   # # # #  #     \n" +
                         " ## # # # # ###  # ";
-        assertEquals(result, p.render("CAMIÓ"));*/
+        assertEquals(result, p.render("CAMIÓ"));
     }
 
-    /*@Test
+    @Test
     public void tests_texts_amb_espais() {
         String data =
                         " #  ##   ## ##  ### ###  ## # # ###  ## # # #   # # ###  #  ##   #  ##   ## ### # # # # # # # # # # ### ###\n" +
@@ -113,9 +113,9 @@ public class PrinterTest {
                         "#   # # # #     #    #  #   # #   #     #     #  #  # # # # # #  #    #                      #      #     # #   # #  #    #\n" +
                         " ## # # # #  #   ##  #  ### # # ##      ### ##   #  # # # # # #  #  ##       #   #   #      ###     ### ##  #   # # ### ## ";
         assertEquals(result, p.render("Caràcters estranys $%# i espais"));
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void tests_altra_font() {
         String data =
                 "  _     __    _     __   ___   ___    __                                                    __    __    __    __   ___                                ___   _    \n" +
@@ -135,6 +135,6 @@ public class PrinterTest {
                         "(_     (     / )   /  /  /__)  )     )   \n" +
                         "/__   __)   (__   (__/  / (   .     .    ";
         assertEquals(result, p.render("Escurçó"));
-    }*/
+    }
 
 }
