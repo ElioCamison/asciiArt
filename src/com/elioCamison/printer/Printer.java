@@ -3,10 +3,10 @@ package com.elioCamison.printer;
 public class Printer {
 
     private char[] ascii = new char[0];
-        private int height = 0; // altura d'algo
-        private int width = 0; // tamany de algo
-        private int spacing = 0; // espai entre lletres
-        private int letterWidth = 0; //
+        private int height = 0; //--o altura de data
+        private int width = 0; //--o tamany de data
+        private int spacing = 0; //--o espai entre lletres
+        private int letterWidth = 0;
 
         // Constructor: accepta un String amb la representació de tot l'alfabet
         // Hi haurà 27 lletres en total, separades per un espai en blanc.
@@ -38,57 +38,38 @@ public class Printer {
             text = text.toUpperCase();
             int currentCharacter = 0;
 
+            //--o Recorremos el número de líneas.
             for (int i = 0; i < this.height; i++) {
+                //--o Recorremos el texto que llega por parámetro
                 for (int j = 0; j < text.length(); j++) {
+                    //--o Comprobamos cada caracter del texto si está dentro de las letras que se permiten
                     if (text.codePointAt(j) >= 65 && text.codePointAt(j) <= 90 ) {
-                        currentCharacter = (text.charAt(j) - 65) * (this.letterWidth + this.spacing); // A -> 0, ? -> 27 ???
+                        //--o Guardamos el valor del texto, restandole 65(o lo que es igual a la letra A), y seguidamente lo multiplicamos por el ancho de la letra más el espacio
+                        currentCharacter = (text.charAt(j) - 65) * (this.letterWidth + this.spacing);
                     } else {
+                        //--o De no estar entre los caracteres aceptados, recuperamos directamente el interrogante.
                         currentCharacter = this.width - letterWidth - spacing;
                     }
+                    //--o Iteramos el ancho de la letra más el espacio
                     for (int k = 0; k < this.letterWidth; k++) {
+                        //--o Si el caracter encontrado es igual a un espacio, lo concatena
                         if (text.codePointAt(j) == 32){
                             result += " ";
                         } else {
+                            //--o En caso contrario concatena el caracter obtenido y lo itera.
                             result += this.ascii[(currentCharacter + k)  + (this.width * i) ];
                         }
                     }
+                    //--o Añade un espacio
                     if( j < text.length()-1 ){
                         result += " ";
                     }
                 }
+                //--o Añade un salto de línea
                 if( i < this.height-1 ){
                     result += "\n";
                 }
             }
-
-
-           /* // Recorremos el texto que nos llega por parámetro
-            for (int k = 0; k < text.length(); k++) {
-                // Introducimos un espacio en la variable resultado, para que genere un espacio entre las letras.
-                //result += "\n";
-                // Comprovamos que los caracteres que tiene el texto están dentro del abecedario. A a Z
-                if (text.codePointAt(k) >= 65 && text.codePointAt(k) <= 90 ) {
-                    // Introducimos en el caracter actual el valor del caracter que itera K, multiplicandolo por el ancho de la letra más el espacio entre estas.
-                    currentCharacter = (text.charAt(k) - 65) * (this.letterWidth + this.spacing); // A -> 0, ? -> 27 ???
-                } else {
-                    // En caso de no estar dentro del rango, multiplicamos 26 por el ancho de las letras más el espacio, restandole 1, para que no se salga del array.
-                    currentCharacter = this.width - letterWidth - spacing;
-                }
-                int count = 0;
-                // Iteramos el alto del abecedario
-                for (int i = 0; i < this.height; i++) {
-                    // Iteramos el ancho de la letra más el espacio
-                    for (int j = 0; j < this.letterWidth; j++) {
-                        // Introduce el valor del caracter actual dentro del array, que a su vez concatena el string resultado.
-                        // Concatenamos en el resultado el caracter actual sumando la iteración de j, más el ancho multiplicado por la iteración del alto.
-                        result += this.ascii[(currentCharacter + j)  + (this.width * i) ];
-                        count++;
-                    }
-                    if (i < this.height-1) {
-                        result += "\n";
-                    }
-                }
-            }*/
             return result;
         }
 }
